@@ -1,0 +1,4 @@
+{
+    "Token": "<your token>",
+    "Database": "<your MongoDB url>"
+}
