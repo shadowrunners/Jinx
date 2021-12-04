@@ -4,7 +4,6 @@ const { disconnect } = require('mongoose');
 module.exports = {
     name: "music",
     description: "A complete music system",
-    permissions: "ADMINISTRATOR",
     options: [
         {
             name: "play",
