@@ -10,7 +10,17 @@ module.exports = {
      */
     execute(client) {
         console.log("Ready to rock, bitch.")
-        client.user.setActivity("Get Jinxed", {type: "LISTENING"})
+        setInterval(() => {
+            if (client.maintenance) {
+                client.user.setStatus("online")
+                client.user.setActivity("MaintenanceMaster 1.2", { type: "PLAYING"})
+                return;
+            }
+            if (!client.maintenance) {
+                client.user.setStatus("online")
+                client.user.setActivity("Get Jinxed", { type: "LISTENING" })
+            }
+        }, 30000);
 
         if(!Database) return;
         mongoose.connect(Database, {
