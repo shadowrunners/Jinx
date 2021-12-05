@@ -1,5 +1,4 @@
 const { CommandInteraction, MessageEmbed } = require("discord.js");
-const { execute } = require("../Utilities/userinfo");
 
 module.exports = {
     name: "userinfo",
