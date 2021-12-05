@@ -10,7 +10,8 @@ Jinx is an open-source Discord bot coded using JavaScript with [Discord.js](http
 # 🔹 Features
 * 🎉 **Giveaway**: `giveaway start`, `giveaway actions (end, pause, unpause, reroll, delete)`.
 * 🎧 **Music**: `music play`, `music volume`, `music settings (view queue, skip, pause, resume, stop, shuffle, autoplay, relatedsong, repeat)`.
-* 🛠️ **Utilities**: `userinfo`.
+* 🛠️ **Utilities**: `userinfo`, `maintenancemode`.
+* 📦 **Miscellaneous**: `status`.
 
 # 🔹 Installation
 * Coming soon.
