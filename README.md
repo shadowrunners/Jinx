@@ -19,4 +19,5 @@ Jinx is an open-source Discord bot coded using JavaScript with [Discord.js](http
 * [Lyxcode](https://youtube.com/c/Lyxcode) for his tutorials. (command handler, giveaway system & music system)
 * All the peeps inside his [Discord server](https://discord.gg/dkgebRQWrn) from which I learned how to code all the other systems.
 * [Spiderjockey02](https://github.com/Spiderjockey02/Discord-Bot) & [DeltaCoderr](https://github.com/DeltaCoderr/KarmaBot)'s READMEs from which I took inspiration.
+* Original profile picture artwork taken from [AlphaCoders](https://wall.alphacoders.com/big.php?i=1044272).
 
