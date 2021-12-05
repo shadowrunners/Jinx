@@ -22,6 +22,7 @@ client.distube = new DisTube(client, {
 });
 
 module.exports = client;
+client.maintenance = false;
 
 ["events", "commands"].forEach(handler => {
     require(`./handlers/${handler}`)(client, PG, Ascii);
