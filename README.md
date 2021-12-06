@@ -12,6 +12,7 @@ Jinx is an open-source Discord bot coded using JavaScript with [Discord.js](http
 * 🎧 **Music**: `music play`, `music volume`, `music settings (view queue, skip, pause, resume, stop, shuffle, autoplay, relatedsong, repeat)`.
 * 🛠️ **Utilities**: `userinfo`, `maintenancemode`.
 * 📦 **Miscellaneous**: `status`.
+* 📷 **Fun**: `triggered`, `shit`, `wasted`, `rainbow`, `rip`, `sepia`, `slap`, and more with even more to come.
 
 # 🔹 Installation
 * Coming soon.
