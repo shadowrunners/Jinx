@@ -4,6 +4,7 @@
   "description": "A bot made using the tutorials provided by Lyxcode on his YouTube channel.",
   "main": "./structures/index.js",
   "dependencies": {
+    "@discordjs/voice": "^0.7.5",
     "@distube/spotify": "^1.0.0",
     "ascii-table": "^0.0.9",
     "asynckit": "^0.4.0",

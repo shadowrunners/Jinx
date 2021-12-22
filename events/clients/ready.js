@@ -1,6 +1,6 @@
 const { Client } = require("discord.js");
 const mongoose = require("mongoose");
-const { Database } = require("../../structures/config.json")
+const { Database } = require("../../structures/config.json");
 
 module.exports = {
     name: "ready",
@@ -13,7 +13,7 @@ module.exports = {
         setInterval(() => {
             if (client.maintenance) {
                 client.user.setStatus("online")
-                client.user.setActivity("MaintenanceMaster 1.2", { type: "PLAYING"})
+                client.user.setActivity("MaintenanceMaster 1.2", { type: "PLAYING" })
                 return;
             }
             if (!client.maintenance) {
@@ -22,7 +22,7 @@ module.exports = {
             }
         }, 30000);
 
-        if(!Database) return;
+        if (!Database) return;
         mongoose.connect(Database, {
             useNewUrlParser: true,
             useUnifiedTopology: true

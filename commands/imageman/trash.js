@@ -2,8 +2,8 @@ const { CommandInteraction, MessageEmbed, Client, MessageAttachment } = require(
 const { Canvas } = require('canvacord');
  
 module.exports = {
-    name: "wanted",
-    description: "man's wanted",
+    name: "trash",
+    description: "literally trash",
     options: [
         {
             name: "targetuser",
@@ -12,17 +12,18 @@ module.exports = {
             required: true
         },
     ],
+
     /**
     * @param {CommandInteraction} interaction
     */
 
-    async execute(interaction) {
+     async execute(interaction) {
         const { options } = interaction
-        const wanteduser = options.getUser("targetuser");
-        const avatar = wanteduser.displayAvatarURL({ format: 'png' });
-        const image = await Canvas.wanted(avatar);
-        const attachment = new MessageAttachment(image, "wanted.gif");
+         const trashuser = options.getUser("targetuser");
+         const avatar = trashuser.displayAvatarURL({ format: 'png' });
+         const image = await Canvas.trash(avatar);
+         const attachment = new MessageAttachment(image, "trash.gif");
 
-        interaction.reply({ files: [attachment]})
+         interaction.reply({ files: [attachment]})
      },
 };

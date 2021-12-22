@@ -7,7 +7,6 @@ module.exports = {
     * @param {CommandInteraction} interaction
     */
     execute(interaction, client) {
-    
         if (client.maintenance === false && interaction.user.id == "292743562213457920") {
         client.maintenance = true;
             
@@ -15,6 +14,7 @@ module.exports = {
         .setColor("DARK_PURPLE")
         .setTitle("🔹 | Maintenance mode is now on!")
         .setDescription(`The bot is currently in maintenance mode.`)
+        .setFooter("Take a break and have a coffee while we work. | Original command made by Mart <3")
         .setTimestamp()
                 
         return interaction.reply({ embeds: [maintenanceOn], fetchReply: true })

@@ -2,8 +2,8 @@ const { CommandInteraction, MessageEmbed, Client, MessageAttachment } = require(
 const { Canvas } = require('canvacord');
  
 module.exports = {
-    name: "rainbow",
-    description: "rgb",
+    name: "sepia",
+    description: "sEPIA",
     options: [
         {
             name: "targetuser",
@@ -12,17 +12,18 @@ module.exports = {
             required: true
         },
     ],
+
     /**
     * @param {CommandInteraction} interaction
     */
 
-    async execute(interaction) {
+     async execute(interaction) {
         const { options } = interaction
-        const rgbuser = options.getUser("targetuser");
-        const avatar = rgbuser.displayAvatarURL({ format: 'png' });
-        const image = await Canvas.rainbow(avatar);
-        const attachment = new MessageAttachment(image, "rainbow.gif");
+         const ssuser = options.getUser("targetuser");
+         const avatar = ssuser.displayAvatarURL({ format: 'png' });
+         const image = await Canvas.sepia(avatar);
+         const attachment = new MessageAttachment(image, "sepia.gif");
 
-        interaction.reply({ files: [attachment]})
+         interaction.reply({ files: [attachment]})
      },
 };

@@ -16,13 +16,14 @@ module.exports = {
     * @param {CommandInteraction} interaction
     */
 
-    async execute(interaction) {
+     async execute(interaction) {
         const { options } = interaction
-        const tuser = options.getUser("targetuser");
-        const avatar = tuser.displayAvatarURL({ format: 'png' });
-        const image = await Canvas.trigger(avatar);
-        const attachment = new MessageAttachment(image, "triggered.gif");
+         const tuser = options.getUser("targetuser");
+         const avatar = tuser.displayAvatarURL({ format: 'png' });
+         const image = await Canvas.trigger(avatar);
+         const attachment = new MessageAttachment(image, "triggered.gif");
 
-        interaction.reply({ files: [attachment]})
+         interaction.reply({ files: [attachment]})
+
      },
 };
