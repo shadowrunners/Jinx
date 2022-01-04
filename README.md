@@ -1,7 +1,7 @@
 <img width="120" height="120" align="left" style="float: left; margin: 0 10px 0 0;" alt="Jinx" src="https://cdn.discordapp.com/avatars/917009806353653780/5a591440390d36688fe9620d63dca727.png?size=1024"> 
 
 # Jinx
-[![](https://img.shields.io/badge/discord.js-v13.3.1-blue.svg?logo=npm)](https://github.com/discordjs)
+[![](https://img.shields.io/badge/discord.js-v13.5.0-blue.svg?logo=npm)](https://github.com/discordjs)
 > A learning project for me and also a multi-purpose Discord Bot.
 
 # 🔹 About
