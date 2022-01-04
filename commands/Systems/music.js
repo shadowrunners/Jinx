@@ -18,6 +18,51 @@ module.exports = {
             options: [{ name: "percent", description: "10 = 10%", type: "NUMBER", required: true}]
         },
         {
+            name: "seek",
+            description: "Seeks the song to the specified position.",
+            value: "seek",
+            type: "SUB_COMMAND",
+            options: [
+                {
+                    name: "time",
+                    description: "Provide a position (in seconds) to seek.",
+                    type: "NUMBER",
+                    required: true
+                },
+            ]
+        },
+        {
+            name: "filters",
+            description: "Toggle filters.",
+            type: "SUB_COMMAND",
+            options: [
+                {
+                    name: "set",
+                    description: "Choose a filter.",
+                    type: "STRING",
+                    required: true,
+                    choices: [
+                        {name: "🔹 | Turn off all filters.", value: "false"},
+                        {name: "🔹 | 8D Filter", value: "8d"},
+                        {name: "🔹 | Bass Boost Filter", value: "bassboost"},
+                        {name: "🔹 | Echo Filter", value: "echo"},
+                        {name: "🔹 | Nightcore Filter", value: "nightcore"},
+                        {name: "🔹 | Surround Filter", value: "surround"},
+                        {name: "🔹 | Karaoke Filter", value: "karaoke"},
+                        {name: "🔹 | Vaporwave Filter", value: "vaporwave"},
+                        {name: "🔹 | Flanger Filter", value: "flanger"},
+                        {name: "🔹 | Gate Filter", value: "gate"},
+                        {name: "🔹 | Haas Filter", value: "haas"},
+                        {name: "🔹 | Reverse Filter", value: "reverse"},
+                        {name: "🔹 | Mcompand Filter", value: "mcompand"},
+                        {name: "🔹 | Phaser Filter", value: "phaser"},
+                        {name: "🔹 | Tremolo Filter", value: "tremolo"},
+                        {name: "🔹 | EarWax Filter", value: "earwax"},
+                    ],
+                }
+            ]
+        },
+        {
             name: "settings",
             description: "Select an option",
             type: "SUB_COMMAND",
@@ -110,6 +155,76 @@ module.exports = {
                         )]});
                     }
                     return;
+                }
+                case "filters": {
+                    const queue = await client.distube.getQueue(VoiceChannel);
+                    if(!queue) return interaction.reply({content: "🔹 | Queue is empty."});
+
+                    switch(options.getString("set")) {
+                        case "false" : 
+                        await queue.setFilter(false);
+                        return interaction.reply({content: `🔹 | Disabled all applied filters.`});
+
+                        case "8d" : 
+                        await queue.setFilter(`3d`);
+                        return interaction.reply({content: `🔹 | Toggled the 8D filter.`});
+
+                        case "karaoke" : 
+                        await queue.setFilter(`karaoke`);
+                        return interaction.reply({content: `🔹 | Toggled the Karaoke filter.`});
+                        
+                        case "vaporwave" : 
+                        await queue.setFilter(`vaporwave`);
+                        return interaction.reply({content: `🔹 | Toggled the Vaporwave filter.`});
+
+                        case "flanger" : 
+                        await queue.setFilter(`flanger`);
+                        return interaction.reply({content: `🔹 | Toggled the Flanger filter.`});
+
+                        case "gate" : 
+                        await queue.setFilter(`gate`);
+                        return interaction.reply({content: `🔹 | Toggled the Gate filter.`});
+
+                        case "haas" : 
+                        await queue.setFilter(`haas`);
+                        return interaction.reply({content: `🔹 | Toggled the Haas filter.`});
+
+                        case "reverse" : 
+                        await queue.setFilter(`reverse`);
+                        return interaction.reply({content: `🔹 | Toggled the Reverse filter.`});
+
+                        case "mcompand" : 
+                        await queue.setFilter(`mcompand`);
+                        return interaction.reply({content: `🔹 | Toggled the Mcompand filter.`});
+
+                        case "phaser" : 
+                        await queue.setFilter(`phaser`);
+                        return interaction.reply({content: `🔹 | Toggled the Phaser filter.`});
+
+                        case "tremolo" : 
+                        await queue.setFilter(`tremolo`);
+                        return interaction.reply({content: `🔹 | Toggled the Tremolo filter.`});
+
+                        case "earwax" : 
+                        await queue.setFilter(`earwax`);
+                        return interaction.reply({content: `🔹 | Toggled the EarWax filter.`});
+
+                        case "bassboost" : 
+                        await queue.setFilter(`bassboost`);
+                        return interaction.reply({content: `🔹 | Toggled the Bass Boost filter.`});
+                        
+                        case "echo" : 
+                        await queue.setFilter(`echo`);
+                        return interaction.reply({content: `🔹 | Toggled the Echo filter.`});
+                        
+                        case "nightcore" : 
+                        await queue.setFilter(`nightcore`);
+                        return interaction.reply({content: `🔹 | Toggled the Nightcore filter.`});
+                        
+                        case "surround" : 
+                        await queue.setFilter(`surround`);
+                        return interaction.reply({content: `🔹 | Toggled the Surround filter.`});
+                    }
                 }
             }
         } catch (e) {

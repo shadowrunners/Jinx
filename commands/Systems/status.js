@@ -11,15 +11,15 @@ module.exports = {
     async execute(interaction, client) {
         const Response = new MessageEmbed()
             .setColor("DARK_PURPLE")
-            .setTitle("ValkStats")
-            .setDescription(`**Client**: \`🟢 ONLINE\` - \`${client.ws.ping}ms\`\n **Uptime**: <t:${parseInt(client.readyTimestamp / 1000)}:R>\n
-            **Database**: \`${switchTo(connection.readyState)}\` \n \n **__Tools__**: \n - **Discord Javscript**: \`${process.version}\`\n - **Node.js**: \`${process.version}\`\n - **Discord.js**: \`${require("discord.js").version}\`\n - **MongoDB**: \`${require("mongoose").version}\`\n - **Mongoose**: \`${require("mongoose").version}\`\n - **Discord.js-Commands**: \`${require("../../package.json").version}\``)
+            .setTitle("JinxStats")
+            .setDescription(`**Client**: \`🔷 Online\` - \`${client.ws.ping}ms\`\n **Uptime**: <t:${parseInt(client.readyTimestamp / 1000)}:R>\n
+            **Database**: \`${switchTo(connection.readyState)}\` \n \n **__Tools__**: \n - **Node.js**: \`${process.version}\`\n - **Discord.js**: \`${require("discord.js").version}\`\n - **MongoDB**: \`${require("mongoose").version}\`\n - **Mongoose**: \`${require("mongoose").version}\`\n`)
             .addField("**__Commands__**", `\`${client.commands.size}\` commands loaded.`, true)
             .addField("**__Guilds__**", `\`${client.guilds.cache.size}\` guilds connected.`, true)
             .addField("**__Users__**", `\`${client.users.cache.size}\` users connected.`, true)
             .setThumbnail(client.user.avatarURL({ format: "png", dynamic: true, size: 1024 }))
             .setTimestamp()
-            .setFooter("ValkStats • Original source code made by AntiParty <3");
+            .setFooter("JinxStats • Original source code made by AntiParty <3");
 
         interaction.reply({ embeds: [Response], ephemeral: true });
     }
@@ -29,16 +29,16 @@ function switchTo(val) {
     var status = " ";
     switch (val) {
         case 0:
-            status = "🔴 DISCONNECTED";
+            status = "🟥 Disconnected";
             break;
         case 1:
-            status = `🟢 CONNECTED`
+            status = `🔷 Connected`
             break;
         case 2:
-            status = `🟡 CONNECTING`
+            status = `🟨 Connecting`
             break;
         case 3:
-            status = `🔵 DISCONNECTING`
+            status = `🟨 Disconnecting`
             break;
     }
     return status;
