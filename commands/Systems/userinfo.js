@@ -12,8 +12,8 @@ module.exports = {
         }
     ],
     /**
-     * @param {CommandInteraction} interaction
-     */
+    * @param {CommandInteraction} interaction
+    */
 
     async execute(interaction) {
         const target = interaction.options.getMember("target") || interaction.member;
@@ -21,7 +21,7 @@ module.exports = {
 
         const Response = new MessageEmbed()
             .setColor("DARK_PURPLE")
-            .setAuthor(target.user.tag, target.user.avatarURL({dynamic: true}))
+            .setAuthor({ name: `${target.user.tag}`, iconURL: `${target.user.avatarURL({dynamic: true})}`})
             .setThumbnail(target.user.avatarURL({dynamic: true}))
             .addFields(
                 {name: "ID", value: target.user.id},

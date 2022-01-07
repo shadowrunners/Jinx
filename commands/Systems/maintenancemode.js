@@ -13,13 +13,12 @@ module.exports = {
         const maintenanceOn = new MessageEmbed()
         .setColor("DARK_PURPLE")
         .setTitle("🔹 | Maintenance mode is now on!")
-        .setDescription(`The bot is currently in maintenance mode.`)
-        .setFooter("Take a break and have a coffee while we work. | Original command made by Mart <3")
+        .setDescription(` The bot is currently in maintenance mode.`)
+        .setFooter({text: "Take a break and have a coffee while we work. • Original source by Mart <3"})
         .setTimestamp()
                 
         return interaction.reply({ embeds: [maintenanceOn], fetchReply: true })
     }
-
         if (client.maintenance && interaction.user.id == "292743562213457920"){
         client.maintenance = false;
 

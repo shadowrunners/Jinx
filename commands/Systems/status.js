@@ -19,7 +19,7 @@ module.exports = {
             .addField("**__Users__**", `\`${client.users.cache.size}\` users connected.`, true)
             .setThumbnail(client.user.avatarURL({ format: "png", dynamic: true, size: 1024 }))
             .setTimestamp()
-            .setFooter("JinxStats • Original source code made by AntiParty <3");
+            .setFooter({text: "JinxStats • Original source code made by AntiParty <3"});
 
         interaction.reply({ embeds: [Response], ephemeral: true });
     }
