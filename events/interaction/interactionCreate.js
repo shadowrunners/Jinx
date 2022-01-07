@@ -11,7 +11,8 @@ module.exports = {
         if (client.maintenance && interaction.user.id != "292743562213457920") {
             const Response = new MessageEmbed()
             .setTitle("Maintenance")
-            .setDescription("Jinx is currently in maintenance mode.")
+            .setDescription("Jinx is currently in maintenance mode. [Join the support server for updates.](https://discord.gg/HwkDSs7X82)")
+            .setFooter({text: "Take a break and have a coffee while we work."})
             .setColor("DARK_PURPLE")
 
             return interaction.reply({embeds: [Response]})
