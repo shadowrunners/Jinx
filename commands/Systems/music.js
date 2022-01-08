@@ -152,6 +152,13 @@ module.exports = {
                         .setColor("DARK_PURPLE")
                         .setDescription(`${queue.songs.slice(0, 10).map(
                             (song, id) => `\n**${id + 1}**. ${song.name} - \`${song.formattedDuration}\``)}`)]});
+                    } try {
+
+                    } catch (err) {
+                         const err2Embed = new MessageEmbed()
+                            .setColor("RED")
+                            .setDescription(`⚠ An error has occured: ${e}`)
+                            return interaction.reply({embeds: [err2Embed]});
                     }
                     return;
                 }
