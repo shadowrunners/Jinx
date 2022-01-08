@@ -12,7 +12,7 @@ module.exports = {
 
         const svinfo = new MessageEmbed()
             .setColor("BLURPLE")
-            .setAuthor(guild.name, guild.iconURL({dynamic: true}))
+            .setAuthor({name: `${guild.name}`})
             .setThumbnail(guild.iconURL({dynamic: true}))
             .addFields(
                 {
@@ -22,6 +22,12 @@ module.exports = {
                         `- Created: <t:${parseInt(createdTimestamp / 1000)}:R>`,
                         `- Owner: <@${ownerId}>`,
                         `- Description: ${description}`,
+                    ].join("\n")
+                },
+                {
+                    name: `🔹| Roles - ${guild.roles.cache.size}`,
+                    value: [
+                            `Server Roles: ${guild.roles.cache.map(r => r).join(" ").replace("@everyone", "") || "None"}`,
                     ].join("\n")
                 },
                 {
@@ -62,7 +68,7 @@ module.exports = {
                     ].join("\n")
                 },
             )
-            .setFooter("Last Checked:").setTimestamp();
+            .setFooter({text: "Last Checked"}).setTimestamp();
             interaction.reply({ embeds: [svinfo] })
     }
 }
