@@ -19,7 +19,13 @@ client.distube = new DisTube(client, {
     leaveOnEmpty: true,
     leaveOnFinish: false,
     emitAddSongWhenCreatingQueue: false,
-    plugins: [new SpotifyPlugin(), new SoundCloudPlugin()]
+    plugins: [new SpotifyPlugin({
+        parallel: true, 
+        emitEventsAfterFetching: false,
+        api: {
+            clientId: "Insert your Spotify ID.",
+            clientSecret: "Insert your Spotify Secret."
+        }, }), new SoundCloudPlugin()]
 });
 
 module.exports = client;

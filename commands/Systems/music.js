@@ -150,9 +150,8 @@ module.exports = {
                         case "queue":
                         return interaction.reply({embeds: [new MessageEmbed()
                         .setColor("DARK_PURPLE")
-                        .setDescription(`${queue.songs.map(
-                        (song, id) => `\n**${id + 1}**. ${song.name} - \`${song.formattedDuration}\``)}`
-                        )]});
+                        .setDescription(`${queue.songs.slice(0, 10).map(
+                            (song, id) => `\n**${id + 1}**. ${song.name} - \`${song.formattedDuration}\``)}`)]});
                     }
                     return;
                 }
