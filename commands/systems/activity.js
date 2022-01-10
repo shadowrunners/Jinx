@@ -20,10 +20,6 @@ module.exports = {
                     value: "chess"
                 },
                 {
-                    name: "chessDev",
-                    value: "chessDev"
-                },
-                {
                     name: "checkers",
                     value: "checkers"
                 },
@@ -59,10 +55,6 @@ module.exports = {
                     name: "awkword",
                     value: "awkword"
                 },
-                {
-                    name: "puttparty",
-                    value: "puttparty"
-                },
             ]
         }
     ],
@@ -89,15 +81,6 @@ module.exports = {
 
                 if(!connected) return interaction.reply({content: "You aren't connected to a voice channel, join a voice channel to create a Chess in the Park invite!"})
                 client.DiscordTogether.createTogetherCode(interaction.member.voice.channelId, 'chess').then(async invite => {
-                    interaction.reply({ content: `Click the link to join the activity: ${invite.code}`})
-                })
-            }
-            break;
-            case "chessDev": {
-                const connected = member.voice.channel;
-
-                if(!connected) return interaction.reply({content: "You aren't connected to a voice channel, join a voice channel to create a Chess in the Park Developer invite!"})
-                client.DiscordTogether.createTogetherCode(interaction.member.voice.channelId, 'chessDev').then(async invite => {
                     interaction.reply({ content: `Click the link to join the activity: ${invite.code}`})
                 })
             }
@@ -179,15 +162,6 @@ module.exports = {
 
                 if(!connected) return interaction.reply({content: "You aren't connected to a voice channel, join a voice channel to create a Awkword invite!"})
                 client.DiscordTogether.createTogetherCode(interaction.member.voice.channelId, 'awkword').then(async invite => {
-                    interaction.reply({ content: `Click the link to join the activity: ${invite.code}`})
-                })
-            }
-            break;
-            case "puttparty": {
-                const connected = member.voice.channel;
-
-                if(!connected) return interaction.reply({content: "You aren't connected to a voice channel, join a voice channel to create a Putt Party invite!"})
-                client.DiscordTogether.createTogetherCode(interaction.member.voice.channelId, 'puttparty').then(async invite => {
                     interaction.reply({ content: `Click the link to join the activity: ${invite.code}`})
                 })
             }

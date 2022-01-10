@@ -5,6 +5,7 @@ const { promisify } = require("util");
 const { glob } = require("glob");
 const PG = promisify(glob);
 const Ascii = require("ascii-table");
+const { DiscordTogether } = require("discord-together");
 
 client.commands = new Collection();
 
@@ -13,6 +14,7 @@ require("../systems/giveawaysystem.js")(client);
 const { DisTube } = require("distube");
 const { SpotifyPlugin } = require("@distube/spotify");
 const { SoundCloudPlugin } = require("@distube/soundcloud");
+client.DiscordTogether = new DiscordTogether(client);
 
 client.distube = new DisTube(client, {
     emitNewSongOnly: true,
