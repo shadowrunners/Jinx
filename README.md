@@ -12,7 +12,7 @@ Jinx is an learning project for me and also an open-source Discord Bot coded usi
 * 🎧 **Music**: `music play`, `music volume`, `music settings (view queue, skip, pause, resume, stop, shuffle, autoplay, relatedsong, repeat)`.
 * 🛠️ **Utilities**: `userinfo`, `maintenancemode`, `serverinfo`.
 * 📦 **Miscellaneous**: `status`.
-* 📷 **Fun**: `image (triggered, shit, wasted, rainbow, rip, sepia, slap)`
+* 📷 **Fun**: `image (triggered, shit, wasted, rainbow, rip, sepia, slap)`, `activity`.
 
 # 🔹 Installation
 * Coming soon.
