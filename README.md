@@ -5,7 +5,7 @@
 > A learning project for me and also a multi-purpose Discord Bot.
 
 # 🔹 About
-Jinx is an learning project for me and also an open-source Discord Bot coded using JavaScript with [Discord.js](https://discord.js.org) and with the help of tutorials made by [Lyxcode](https://www.youtube.com/c/Lyxcode).
+Jinx is a learning project for me and also an open-source Discord Bot coded using JavaScript with [Discord.js](https://discord.js.org) and with the help of tutorials made by [Lyxcode](https://www.youtube.com/c/Lyxcode).
 
 # 🔹 Features
 * 🎉 **Giveaway**: `giveaway start`, `giveaway actions (end, pause, unpause, reroll, delete)`.
