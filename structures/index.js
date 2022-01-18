@@ -1,6 +1,6 @@
 const { Client, Collection } = require("discord.js");
 const client = new Client({intents: 32767});
-const { Token } = require("./config.json");
+const { Token, SpotifyClientID, SpotifySecret } = require("./config.json");
 const { promisify } = require("util");
 const { glob } = require("glob");
 const PG = promisify(glob);
@@ -25,8 +25,8 @@ client.distube = new DisTube(client, {
         parallel: true, 
         emitEventsAfterFetching: false,
         api: {
-            clientId: "Insert your Spotify ID.",
-            clientSecret: "Insert your Spotify Secret."
+            clientId: SpotifyClientID,
+            clientSecret: SpotifySecret
         }, }), new SoundCloudPlugin()]
 });
 

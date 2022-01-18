@@ -97,7 +97,7 @@ module.exports = {
         try {
             switch(options.getSubcommand()) {
                 case "play": {
-                    client.distube.playVoiceChannel(VoiceChannel, options.getString("query"), { textChannel: channel, member: member });
+                    client.distube.play(VoiceChannel, options.getString("query"), { textChannel: channel, member: member });
                     return interaction.reply({content: "🎧 Music request received, asking MusicMan to start playing."});
                 }
                 case "volume": {
@@ -142,7 +142,7 @@ module.exports = {
                         case "RelatedSong":
                         await queue.addRelatedSong(VoiceChannel);
                         return interaction.reply({content: "🔹 | A related song has been added to the queue."});
-                        
+                                   
                         case "RepeatMode":
                         let Mode2 = await client.distube.setRepeatMode(queue);
                         return interaction.reply({content: `🔹 | Repeat Mode is set to: ${Mode2 = Mode2 ? Mode2 == 2 ? "Queue" : "Song" : "Off"}`});

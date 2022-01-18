@@ -1,4 +1,5 @@
 const { CommandInteraction, MessageEmbed } = require("discord.js");
+const { ownerID } = require("../../structures/config.json");
 
 module.exports = {
     name: "maintenance",
@@ -7,19 +8,19 @@ module.exports = {
     * @param {CommandInteraction} interaction
     */
     execute(interaction, client) {
-        if (client.maintenance === false && interaction.user.id == "292743562213457920") {
+        if (client.maintenance === false && ownerID) {
         client.maintenance = true;
             
         const maintenanceOn = new MessageEmbed()
         .setColor("DARK_PURPLE")
         .setTitle("🔹 | Maintenance mode is now on!")
         .setDescription(`The bot is currently in maintenance mode.`)
-        .setFooter({text: "Take a break and have a coffee while we work. • Original source by Mart <3"})
+        .setFooter({text: "Take a break and have a coffee while we work."})
         .setTimestamp()
                 
         return interaction.reply({ embeds: [maintenanceOn], fetchReply: true })
     }
-        if (client.maintenance && interaction.user.id == "292743562213457920"){
+        if (client.maintenance && ownerID){
         client.maintenance = false;
 
         const maintenanceOff = new MessageEmbed()
