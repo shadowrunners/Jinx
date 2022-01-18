@@ -15,7 +15,6 @@ Jinx is a learning project for me and also an open-source Discord Bot coded usin
 * 📷 **Fun**: `image (triggered, shit, wasted, rainbow, rip, sepia, slap)`, `activity`.
 
 # 🔹 Installation
-* Coming soon.
 
 # 🔹 Credits
 * [Lyxcode](https://youtube.com/c/Lyxcode) for his tutorials (command handler, giveaway system & music system).
