@@ -13,4 +13,4 @@
 10. Run `npm install` to install the dependencies.
 11. After your dependencies finish installing, you can run `node .` and your bot should start up!
 
-If you're having any issues with the installation process, hope in our [Discord](https://discord.gg/HwkDSs7X82) for support!
+If you're having any issues with the installation process, hop in our [Discord Server](https://discord.gg/HwkDSs7X82) for support!
