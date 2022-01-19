@@ -1,4 +1,6 @@
 ## Installation Guide
+Before starting, this bot DOESN'T HAVE ANY SUPPORT FOR HEROKU, REPLIT OR GLITCH! If you encounter problems while hosting on one of these platforms, no help will be provided until official support is here!
+
 1. Create a bot on the [Discord Developer Portal](https://discordapp.com/developers/).
 2. Turn on **Server Members Intent** and **Presence Intent**in the bot's settings page on the developer portal.
 3. Install Node.js 17.
