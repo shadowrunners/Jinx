@@ -9,6 +9,7 @@ module.exports = {
     */
     execute(interaction, client) {
         if (client.maintenance === false && ownerID) {
+            if(interaction.user.id !== ownerID) return interaction.reply({ content: "You do not have acccess to this command!", fetchReply: true }).then(msg => {setTimeout(() => msg.delete(), 5000)});
         client.maintenance = true;
             
         const maintenanceOn = new MessageEmbed()
@@ -20,7 +21,8 @@ module.exports = {
                 
         return interaction.reply({ embeds: [maintenanceOn], fetchReply: true })
     }
-        if (client.maintenance && ownerID){
+        if (client.maintenance && ownerID) {
+            if(interaction.user.id !== ownerID) return interaction.reply({ content: "You do not have acccess to this command!", fetchReply: true }).then(msg => {setTimeout(() => msg.delete(), 5000)});
         client.maintenance = false;
 
         const maintenanceOff = new MessageEmbed()
@@ -30,7 +32,6 @@ module.exports = {
         .setTimestamp()
 
         return interaction.reply({embeds: [maintenanceOff], fetchReply: true})
-    }
-        interaction.reply({ content: "You do not have acccess to this command!", fetchReply: true }).then(msg => {setTimeout(() => msg.delete(), 5000)});
+        }
     }
 }
