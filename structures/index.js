@@ -8,19 +8,20 @@ const Ascii = require("ascii-table");
 const { DiscordTogether } = require("discord-together");
 
 client.commands = new Collection();
+client.DiscordTogether = new DiscordTogether(client);
 
-require("../systems/giveawaysystem.js")(client);
+require("../systems/giveawaySystem.js")(client);
 
 const { DisTube } = require("distube");
 const { SpotifyPlugin } = require("@distube/spotify");
 const { SoundCloudPlugin } = require("@distube/soundcloud");
-client.DiscordTogether = new DiscordTogether(client);
 
 client.distube = new DisTube(client, {
     emitNewSongOnly: true,
     leaveOnEmpty: true,
     leaveOnFinish: false,
     emitAddSongWhenCreatingQueue: false,
+    youtubeDL: false,
     plugins: [new SpotifyPlugin({
         parallel: true, 
         emitEventsAfterFetching: false,
