@@ -4,7 +4,7 @@ const DB = require("../../structures/schemas/ticketDB.js");
 module.exports = {
   name: "ticket",
   description: "Options for tickets.",
-  permissions: "ADMINISTRATOR",
+  permission: "ADMINISTRATOR",
   options: [
     {
       name: "action",

@@ -9,7 +9,7 @@ const DB = require("../../structures/schemas/ticketSetup.js");
 module.exports = {
   name: "ticketsetup",
   description: "A full ticket system.",
-  permissions: "ADMINISTRATOR",
+  permission: "ADMINISTRATOR",
   options: [
     {
       name: "channel",
