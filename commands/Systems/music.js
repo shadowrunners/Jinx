@@ -118,7 +118,7 @@ module.exports = {
                     if(!queue) return interaction.reply({ content: "🔹 | Queue is empty." }); 
 
                     await queue.seek(time);
-                    return interaction.reply({content: `🔹 | Seeked to ${time}!`})
+                    return interaction.reply({content: `🔹 | Seeked to ${time}s!`})
                 }
                 case "settings": {
                     const queue = await client.distube.getQueue(VoiceChannel);
