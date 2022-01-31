@@ -111,6 +111,15 @@ module.exports = {
                     client.distube.setVolume(VoiceChannel, Volume)
                     return interaction.reply({ content: `🔹 | Volume has been set to \`${Volume}%\`` });
                 }
+                case "seek": {
+                    const queue = await client.distube.getQueue(VoiceChannel);
+                    const time = options.getNumber("time");
+
+                    if(!queue) return interaction.reply({ content: "🔹 | Queue is empty." }); 
+
+                    await queue.seek(time);
+                    return interaction.reply({content: `🔹 | Seeked to ${time}!`})
+                }
                 case "settings": {
                     const queue = await client.distube.getQueue(VoiceChannel);
 
