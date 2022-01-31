@@ -12,7 +12,7 @@ module.exports = {
         console.log("Ready to rock, bitch.")
         setInterval(() => {
             if (client.maintenance) {
-                client.user.setStatus("online")
+                client.user.setStatus("dnd")
                 client.user.setActivity("MaintenanceMaster 1.2", { type: "PLAYING" })
                 return;
             }
@@ -22,6 +22,8 @@ module.exports = {
             }
         }, 30000);
 
+        require("../../systems/lockdownSystem.js")(client);
+        
         if (!Database) return;
         mongoose.connect(Database, {
             useNewUrlParser: true,

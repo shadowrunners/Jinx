@@ -14,7 +14,7 @@ module.exports = {
             
         const maintenanceOn = new MessageEmbed()
         .setColor("DARK_PURPLE")
-        .setTitle("🔹 | Maintenance mode is now on!")
+        .setTitle("Maintenance mode is now on!")
         .setDescription(`The bot is currently in maintenance mode.`)
         .setFooter({text: "Take a break and have a coffee while we work."})
         .setTimestamp()
@@ -27,7 +27,7 @@ module.exports = {
 
         const maintenanceOff = new MessageEmbed()
         .setColor("RED")
-        .setTitle("🔹 | Maintenance mode is now off!")
+        .setTitle("Maintenance mode is now off!")
         .setDescription("The bot is no longer in maintenance mode.")
         .setTimestamp()
 

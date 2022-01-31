@@ -9,7 +9,7 @@ module.exports = {
      * @param {Client} client 
      */
     async execute(interaction, client) {
-        const Response = new MessageEmbed()
+        const Embed = new MessageEmbed()
             .setColor("DARK_PURPLE")
             .setTitle("JinxStats")
             .setDescription(`**Client**: \`🔷 Online\` - \`${client.ws.ping}ms\`\n **Uptime**: <t:${parseInt(client.readyTimestamp / 1000)}:R>\n
@@ -19,9 +19,9 @@ module.exports = {
             .addField("**__Users__**", `\`${client.users.cache.size}\` users connected.`, true)
             .setThumbnail(client.user.avatarURL({ format: "png", dynamic: true, size: 1024 }))
             .setTimestamp()
-            .setFooter({text: "JinxStats • Original source code made by AntiParty <3"});
+            .setFooter({text: "JinxStats"});
 
-        interaction.reply({ embeds: [Response], ephemeral: true });
+        interaction.reply({ embeds: [Embed], ephemeral: true });
     }
 };
 

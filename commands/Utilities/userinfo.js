@@ -4,7 +4,6 @@ module.exports = {
     name: "User Information",
     type: "USER",
     context: true,
-
     /**
     * @param {ContextMenuInteraction} interaction 
     */
@@ -12,7 +11,7 @@ module.exports = {
         const target = await interaction.guild.members.fetch(interaction.targetId)
         await target.user.fetch();
         
-        const Response = new MessageEmbed()
+        const Embed = new MessageEmbed()
             .setColor("DARK_PURPLE")
             .setAuthor({ name: `${target.user.tag}`, iconURL: `${target.user.avatarURL({dynamic: true})}`})
             .setThumbnail(target.user.avatarURL({dynamic: true}))
@@ -24,6 +23,6 @@ module.exports = {
                 {name: "Roles", value: target.roles.cache.map(r => r).join(" ").replace("@everyone", "") || "None"}
             );
             
-        interaction.reply({embeds: [Response], ephemeral: true})
+        interaction.reply({embeds: [Embed], ephemeral: true})
     }
 }
