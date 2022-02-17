@@ -48,6 +48,6 @@ module.exports = {
               .replace("@everyone", "") || "None",
         }
       );
-    interaction.reply({ embeds: [userinfoEmbed], ephemeral: true });
+    interaction.reply({ embeds: [userinfoEmbed] });
   },
 };

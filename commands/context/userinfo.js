@@ -23,6 +23,6 @@ module.exports = {
                 {name: "Roles", value: target.roles.cache.map(r => r).join(" ").replace("@everyone", "") || "None"}
             );
             
-        interaction.reply({embeds: [Embed], ephemeral: true})
+        interaction.reply({embeds: [Embed]})
     }
 }

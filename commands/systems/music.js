@@ -1,5 +1,5 @@
-const { CommandInteraction, MessageEmbed, Client } = require('discord.js');
-const { disconnect } = require('mongoose');
+const { CommandInteraction, MessageEmbed, Client } = require("discord.js");
+const { disconnect } = require("mongoose");
 
 module.exports = {
     name: "music",
@@ -176,7 +176,6 @@ module.exports = {
                                     .setDescription(`${queue.songs.slice(0, 1).map(
                                         (song) => `[${song.name}](${song.url}) [${song.user}]`)}`)]
                             });
-
                     } try {
                     } catch (err) {
                         const err2Embed = new MessageEmbed()

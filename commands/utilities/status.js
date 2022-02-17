@@ -9,7 +9,7 @@ module.exports = {
      * @param {Client} client 
      */
     async execute(interaction, client) {
-        const Embed = new MessageEmbed()
+        const statusEmbed = new MessageEmbed()
             .setColor("DARK_PURPLE")
             .setTitle("JinxStats")
             .setDescription(`**Client**: \`🔷 Online\` - \`${client.ws.ping}ms\`\n **Uptime**: <t:${parseInt(client.readyTimestamp / 1000)}:R>\n
@@ -21,7 +21,7 @@ module.exports = {
             .setTimestamp()
             .setFooter({text: "JinxStats"});
 
-        interaction.reply({ embeds: [Embed], ephemeral: true });
+        interaction.reply({ embeds: [statusEmbed] });
     }
 };
 
