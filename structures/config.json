@@ -4,5 +4,7 @@
     "ownerID": "",
 
     "SpotifyClientID": "",
-    "SpotifySecret": ""
+    "SpotifySecret": "",
+
+    "imdbAPIKey": ""
 }
