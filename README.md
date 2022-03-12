@@ -10,8 +10,11 @@ Jinx is a learning project for me and also an open-source Discord Bot coded usin
 # 🔹 Features
 * 🎉 **Giveaway**: `giveaway start`, `giveaway actions (end, pause, unpause, reroll, delete)`.
 * 🎧 **Music**: `music play`, `music volume`, `music settings (view queue, skip, pause, resume, stop, shuffle, autoplay, relatedsong, repeat)`.
-* 🛠️ **Utilities**: `userinfo`, `maintenancemode`, `serverinfo`.
-* 📦 **Miscellaneous**: `status`.
+* ⚒️ **Moderation**: `ban`, `kick`, `hackban`, `unban`.
+* 🎟️ **Tickets**: `ticketsetup`, `ticket`.
+* 🛠️ **Utilities**: `avatar`, `userinfo`, `maintenancemode`, `serverinfo`, `quarantine`, `unlock`.
+* 📦 **Miscellaneous**:  `about`, `aniinfo`, `movieinfo`, `status`, `showinfo`.
+* 😀 **Emotions**: `bite`, `blush`, `bonk`, `bully`, `cringe`, `cry`, `cuddle`, `handhold`, `highfive`, `hug`, `kill`, `kiss`, `pat`, `poke`, `slap`, `smile`, `wave`, `yeet`.
 * 📷 **Fun**: `image (triggered, shit, wasted, rainbow, rip, sepia, slap)`, `activity`.
 
 # 🔹 Installation
