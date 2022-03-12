@@ -13,6 +13,7 @@
     "ascii-table": "^0.0.9",
     "asynckit": "^0.4.0",
     "callsites": "^4.0.0",
+    "canvacord": "^5.2.3",
     "combined-stream": "^1.0.8",
     "delayed-stream": "^1.0.0",
     "discord-api-types": "^0.29.0",
