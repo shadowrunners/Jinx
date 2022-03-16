@@ -9,7 +9,7 @@ module.exports = {
      * @param {Client} client 
      */
     execute(client) {
-        console.log("Ready to rock, bitch.")
+        console.log("[Client] >> Ready to rock, bitch.")
         setInterval(() => {
             if (client.maintenance) {
                 client.user.setStatus("dnd")
@@ -24,12 +24,13 @@ module.exports = {
 
         require("../../systems/lockdownSystem.js")(client);
         
+        client.manager.init(client.user.id);
         if (!Database) return;
         mongoose.connect(Database, {
             useNewUrlParser: true,
             useUnifiedTopology: true
         }).then(() => {
-            console.log("Valk has successfully connected to the database.")
+            console.log("[DB] >> Jinx has successfully connected to the database.")
         }).catch((err) => {
             console.log(err)
         });

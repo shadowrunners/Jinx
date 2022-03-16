@@ -1,6 +1,6 @@
 const { Client, Collection } = require("discord.js");
-const client = new Client({intents: 32767});
-const { Token, SpotifyClientID, SpotifySecret } = require("./config.json");
+const client = new Client({intents: 32767,});
+const { Token } = require("./config.json");
 const { promisify } = require("util");
 const { glob } = require("glob");
 const PG = promisify(glob);
@@ -9,27 +9,9 @@ const { DiscordTogether } = require("discord-together");
 
 client.commands = new Collection();
 client.DiscordTogether = new DiscordTogether(client);
+client.manager = require("./utils/manager.js")(client);
 
 require("../systems/giveawaySystem.js")(client);
-
-const { DisTube } = require("distube");
-const { SpotifyPlugin } = require("@distube/spotify");
-const { SoundCloudPlugin } = require("@distube/soundcloud");
-
-client.distube = new DisTube(client, {
-    emitNewSongOnly: true,
-    leaveOnEmpty: true,
-    leaveOnFinish: false,
-    emitAddSongWhenCreatingQueue: false,
-    youtubeDL: false,
-    plugins: [new SpotifyPlugin({
-        parallel: true, 
-        emitEventsAfterFetching: false,
-        api: {
-            clientId: SpotifyClientID,
-            clientSecret: SpotifySecret
-        }, }), new SoundCloudPlugin()]
-});
 
 module.exports = client;
 client.maintenance = false;
