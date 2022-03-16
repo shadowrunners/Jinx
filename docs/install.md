@@ -13,6 +13,8 @@ Before starting, this bot DOESN'T HAVE ANY SUPPORT FOR HEROKU, REPLIT OR GLITCH!
 `SpotifyClientID` and `SpotifySecret` can be obtained from the [Spotify Developer Portal](https://developer.spotify.com/dashboard/applications), by creating a new app and copying the ID and secret over to the config file. `imdbAPIKey` should be your IMDb API Key which can be obtained from [here](https://www.omdbapi.com/apikey.aspx).
 9. Go back to the main folder and open a `Command Prompt` (or Terminal if you're a Linux or Mac user) inside the folder.
 10. Run `npm install` to install the dependencies.
-11. After your dependencies finish installing, you can run `node .` and your bot should start up!
+11. After your dependencies finish installing, you can run the non-dev version with `npm run start` and your bot should start up!
+
+The dev version just runs the bot using nodemon instead of node in case you don't wanna restart your bot after every code change.
 
 If you're having any issues with the installation process, hop in our [Discord Server](https://discord.gg/HwkDSs7X82) for support!
