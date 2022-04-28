@@ -2,7 +2,7 @@
 
 # Jinx
 [![](https://img.shields.io/badge/discord.js-v13.6.0-blue.svg?logo=npm)](https://github.com/discordjs)
-> A learning project for me and also a multi-purpose Discord Bot.
+> A multi-purpose Discord bot built with a ton of tears and love. <3
 
 # 🔹 About
 Jinx is a learning project for me and also an open-source Discord Bot coded using JavaScript with [Discord.js](https://discord.js.org) and with the help of tutorials made by [Lyxcode](https://www.youtube.com/c/Lyxcode).
