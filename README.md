@@ -5,7 +5,7 @@
 > A multi-purpose Discord bot built with a ton of tears and love. <3
 
 # 🔹 About
-Jinx is a learning project for me and also an open-source Discord Bot coded using JavaScript with [Discord.js](https://discord.js.org) and with the help of tutorials made by [Lyxcode](https://www.youtube.com/c/Lyxcode).
+Jinx is an open-source Discord Bot coded in JavaScript using [Discord.js](https://discord.js.org).
 
 # 🔹 Features
 * 🎉 **Giveaway**: `giveaway start`, `giveaway actions (end, pause, unpause, reroll, delete)`.
@@ -21,8 +21,7 @@ Jinx is a learning project for me and also an open-source Discord Bot coded usin
 You can find the installation guide [here](https://github.com/notscrappie/jinx/blob/master/docs/install.md) or alternatively, you can invite our hosted version of Jinx [here](https://discord.com/api/oauth2/authorize?client_id=917009806353653780&permissions=2150976582&scope=bot%20applications.commands).
 
 # 🔹 Credits
-* [Lyxcode](https://youtube.com/c/Lyxcode) for his tutorials (command handler, giveaway system & music system).
-* All the peeps inside his [Discord server](https://discord.gg/dkgebRQWrn) from which I learned how to code all the other systems.
+* [Lyxcode](https://youtube.com/c/Lyxcode) for his tutorials (command handler & giveaway system).
 * [Spiderjockey02](https://github.com/Spiderjockey02/Discord-Bot) & [DeltaCoderr](https://github.com/DeltaCoderr/KarmaBot)'s READMEs from which I took inspiration.
 * Original profile picture artwork taken from [AlphaCoders](https://wall.alphacoders.com/big.php?i=1044272).
 * Huge credits to [Alvaa](https://github.com/Allvaa/lavalink-musicbot) and [SudhanPlayz](https://github.com/SudhanPlayz/Discord-MusicBot/), since their repos have helped me understand Erela.js better than the actual docs.
