@@ -1,4 +1,4 @@
-const { CommandInteraction, Client, MessageEmbed } = require("discord.js");
+const { CommandInteraction, MessageEmbed } = require("discord.js");
 
 module.exports = {
   name: "unban",
@@ -14,10 +14,8 @@ module.exports = {
   ],
   /**
   * @param {CommandInteraction} interaction 
-  * @param {Client} client 
   */
-  execute(interaction, client) {
-    const user = interaction;
+  execute(interaction) {
     const targetID = interaction.options.getString("targetid");
 
     const unbanEmbed = new MessageEmbed()

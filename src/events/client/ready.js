@@ -20,11 +20,12 @@ module.exports = {
                 client.user.setStatus("online")
                 client.user.setActivity("Get Jinxed", { type: "LISTENING" })
             }
-        });
+        }, 30000);
 
         require("../../systems/lockdownSystem.js")(client);
         
         client.manager.init(client.user.id);
+        
         if (!Database) return;
         mongoose.connect(Database, {
             useNewUrlParser: true,

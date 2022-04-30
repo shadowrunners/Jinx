@@ -11,7 +11,7 @@ module.exports = {
         const target = await interaction.guild.members.fetch(interaction.targetId)
         await target.user.fetch();
         
-        const Embed = new MessageEmbed()
+        const uiEmbed = new MessageEmbed()
             .setColor("DARK_PURPLE")
             .setAuthor({ name: `${target.user.tag}`, iconURL: `${target.user.avatarURL({dynamic: true})}`})
             .setThumbnail(target.user.avatarURL({dynamic: true}))
@@ -21,8 +21,7 @@ module.exports = {
                 {name: "Member since", value: `<t:${parseInt(target.joinedTimestamp / 1000)}:R>`, inline: true},
                 {name: "Discord member since", value: `<t:${parseInt(target.user.createdTimestamp / 1000)}:R>`, inline: true},
                 {name: "Roles", value: target.roles.cache.map(r => r).join(" ").replace("@everyone", "") || "None"}
-            );
-            
-        interaction.reply({embeds: [Embed]})
+            );    
+        return interaction.reply({embeds: [uiEmbed]})
     }
 }

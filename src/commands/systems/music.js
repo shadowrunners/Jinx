@@ -35,7 +35,7 @@ module.exports = {
         },
         {
             name: "settings",
-            description: "Select an option",
+            description: "Select an option.",
             type: "SUB_COMMAND",
             options: [{
                 name: "options", description: "Select an option.", type: "STRING", required: true,

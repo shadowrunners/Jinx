@@ -27,14 +27,8 @@ module.exports = {
             }) && client.commands.delete(interaction.commandName);
 
             if (command.permission) {
-                if (!interaction.member.permission.has(command.permission)) {
-                    return interaction.reply({
-                        embeds: [
-                            new MessageEmbed()
-                                .setColor("RED")
-                                .setDescription(`You don't have the required permission to run this command: \`${interaction.commandName}\``)
-                        ], ephemeral: true
-                    })
+                if (!interaction.member.permissions.has(command.permission)) {
+                    return interaction.reply({ content: `You do not have the required permission for this command: \`${interaction.commandName}\`.`, ephemeral: true })
                 }
             }
 

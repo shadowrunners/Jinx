@@ -9,30 +9,30 @@ module.exports = {
         {
             name: 'start',
             description: 'Start a giveaway.',
-            type: 'SUB_COMMAND',
+            type: "SUB_COMMAND",
             options: [
                 {
                     name: 'duration',
                     description: 'Provide a duration for this giveaway. (1m, 1h, 1d)',
-                    type: 'STRING',
+                    type: "STRING",
                     required: true
                 },
                 {
                     name: 'winners',
                     description: 'Select the amount of winners for this giveaway.',
-                    type: 'INTEGER',
+                    type: "INTEGER",
                     required: true
                 },
                 {
                     name: 'prize',
                     description: 'Provide the name of the prize.',
-                    type: 'STRING',
+                    type: "STRING",
                     required: true
                 },
                 {
                     name: 'channel',
                     description: 'Select a channel to send the giveaway to.',
-                    type: 'CHANNEL',
+                    type: "CHANNEL",
                     channelTypes: ['GUILD_TEXT']
                 }
             ]
@@ -40,12 +40,12 @@ module.exports = {
         {
             name: 'actions',
             description: 'Options for giveaways.',
-            type: 'SUB_COMMAND',
+            type: "SUB_COMMAND",
             options: [
                 {
                     name: 'options',
                     description: 'Select an option.',
-                    type: 'STRING',
+                    type: "STRING",
                     required: true,
                     choices: [
                         {
@@ -73,7 +73,7 @@ module.exports = {
                 {
                     name: 'message-id',
                     description: 'Provide the message ID of the giveaway.',
-                    type: 'STRING',
+                    type: "STRING",
                     required: true
                 }
             ]

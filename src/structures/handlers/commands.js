@@ -34,7 +34,7 @@ module.exports = async (client, PG, Ascii) => {
 
   client.on("ready", async () => {
     client.guilds.cache.forEach((g) => {
-      g.commands.set(CommandsArray);
-    })
-  });
+       g.commands.set(CommandsArray);
+     });
+   });
 };
