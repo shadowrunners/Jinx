@@ -1,6 +1,6 @@
 const client = require("../../structures/index.js");
 const { MessageEmbed } = require("discord.js");
-const pms = require("pretty-ms");
+const actualTime = require("humanize-duration");
 
 client.manager
     .on("nodeConnect", (node) => {
@@ -23,10 +23,9 @@ client.manager
                 {
                   name: "Duration",
                   value: [
-                    `\`${pms(player.position, { colonNotation: true })} / ${pms(
+                    `\`${actualTime(player.position)} / ${actualTime(
                         player.queue.current.duration,
-                        { colonNotation: true }
-                      )}\``
+                    )}\``
                   ].join("\n"),
                   inline: true,
                 },

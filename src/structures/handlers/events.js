@@ -19,6 +19,5 @@ module.exports = async(client, PG, Ascii) => {
 
         await Table.addRow(event.name, "🔷 Successfully loaded event.")
     });
-
     console.log(Table.toString());
 }

@@ -31,10 +31,4 @@ module.exports = async (client, PG, Ascii) => {
   });
 
   console.log(Table.toString());
-
-  client.on("ready", async () => {
-    client.guilds.cache.forEach((g) => {
-       g.commands.set(CommandsArray);
-     });
-   });
 };
