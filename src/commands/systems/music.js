@@ -1,6 +1,5 @@
-const { CommandInteraction, MessageEmbed, Client, MessageButton } = require("discord.js");
-const ms = require("pretty-ms");
-const paginationEmbed = require('discordjs-button-pagination');
+const { CommandInteraction, MessageEmbed, Client } = require("discord.js");
+const actualTime = require("humanize-duration");
 const util = require("../../utils/util.js");
 
 module.exports = {
@@ -155,9 +154,8 @@ module.exports = {
                                     {
                                         name: "Duration",
                                         value: [
-                                            `\`${ms(player.position, { colonNotation: true })} / ${ms(
+                                            `\`${actualTime(player.position)} / ${actualTime(
                                                 player.queue.current.duration,
-                                                { colonNotation: true }
                                             )}\``
                                         ].join("\n"),
                                         inline: true,
@@ -221,55 +219,15 @@ module.exports = {
                             if (!player.playing) return interaction.reply({ content: "There is nothing in the queue." });
                             if (!player.queue.length) return interaction.reply({ content: "There is nothing in the queue." });
 
-                            await interaction.deferReply()
-                            let pagesNum = Math.ceil(player.queue.length / 10);
-                            if (pagesNum === 0) pagesNum = 1;
-
-                            const { title, requester, uri } = player.queue.current;
-
-                            const songStrings = [];
-                            for (let i = 0; i < player.queue.length; i++) {
-                                const song = player.queue[i];
-                                songStrings.push(
-                                    `**${i + 1}.** [${song.title}](${song.uri}) \`[${ms(player.queue.current.duration)}]\` • [${song.requester}]\n`)
-                            };
-
-                            const user = `[${requester}]`;
                             const queue = player.queue.map((t, i) => `\`${++i}.\` **${t.title}** [${t.requester}]`);
                             const chunked = util.chunk(queue, 10).map(x => x.join("\n"));
-                            const str = chunked[0]
-                            const str2 = chunked[1]
-                            const str3 = chunked[3]
-                            const embed = new MessageEmbed()
-                                .setAuthor({ name: `Queue - ${guild.name}`, iconURL: guild.iconURL() })
-                                .setDescription(`**Now Playing**: [${title}](${uri}) \`[${ms(player.queue.current.duration)}]\` • ${user}\n\n**Up Next**:${str == '' ? '  Nothing' : '\n' + str}`)
-                            const embed2 = new MessageEmbed()
-                                .setAuthor({ name: `Queue - ${guild.name}`, iconURL: guild.iconURL() })
-                                .setDescription(`**Now Playing**: [${title}](${uri}) \`[${ms(player.queue.current.duration)}]\` • ${user}\n\n**Up Next**:${str2 == '' ? '  Nothing' : '\n' + str2}`)
-                            const embed3 = new MessageEmbed()
-                                .setAuthor({ name: `Queue - ${guild.name}`, iconURL: guild.iconURL() })
-                                .setDescription(`**Now Playing**: [${title}](${uri}) \`[${ms(player.queue.current.duration)}]\` • ${user}\n\n**Up Next**:${str3 == '' ? '  Nothing' : '\n' + str3}`)
 
-                            const button1 = new MessageButton()
-                                .setCustomId('previousbtn')
-                                .setLabel('Previous')
-                                .setStyle('DANGER');
-                            const button2 = new MessageButton()
-                                .setCustomId('nextbtn')
-                                .setLabel('Next')
-                                .setStyle('SUCCESS');
+                            const queueEmbed = new MessageEmbed()
+                                .setColor("BLURPLE")
+                                .setTitle(`Current queue for ${guild.name}`)
+                                .setDescription(chunked[0])
 
-                            pages = [
-                                embed,
-                                embed2,
-                                embed3
-                            ]
-
-                            buttonList = [
-                                button1,
-                                button2
-                            ]
-                            return paginationEmbed(interaction, pages, buttonList);
+                            return interaction.reply({ embeds: [queueEmbed] });
                         }
                     }
                 }

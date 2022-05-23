@@ -11,48 +11,60 @@ module.exports = {
       required: true,
       choices: [
         {
-          name: "youtube",
+          name: "YouTube Together",
           value: "youtube",
         },
         {
-          name: "chess",
+          name: "Chess in The Park",
           value: "chess",
         },
         {
-          name: "checkers",
+          name: "Checkers in the Park",
           value: "checkers",
         },
         {
-          name: "betrayal",
+          name: "Betrayal.io",
           value: "betrayal",
         },
         {
-          name: "poker",
+          name: "Poker Night",
           value: "poker",
         },
         {
-          name: "fish",
+          name: "Fishington.io",
           value: "fish",
         },
         {
-          name: "lettertile",
+          name: "Letter League",
           value: "lettertile",
         },
         {
-          name: "wordsnack",
+          name: "Word Snacks",
           value: "wordsnack",
         },
         {
-          name: "doodlecrew",
+          name: "Doodle Crew",
           value: "doodlecrew",
         },
         {
-          name: "spellcast",
+          name: "SpellCast",
           value: "spellcast",
         },
         {
-          name: "awkword",
+          name: "Awkword",
           value: "awkword",
+        },
+        {
+          name: "Puttparty",
+          value: "puttparty"
+        },
+        {
+          name: "SketchHeads",
+          value: "sketchheads"
+        },
+        {
+          name: "Ocho",
+          value: "ocho"
         },
       ],
     },
@@ -66,16 +78,10 @@ module.exports = {
     const { member } = interaction;
 
     switch (choices) {
-      case "youtube":
-        {
+      case "youtube": {
           const connected = member.voice.channel;
 
-          if (!connected)
-            return interaction.reply({
-              content:
-                "You aren't connected to a voice channel, join a voice channel to create a YouTube Together invite!",
-              ephemeral: true,
-            });
+          if (!connected) return interaction.reply({ content: "You aren't connected to a voice channel, join a voice channel to create a YouTube Together invite!", ephemeral: true});
           client.DiscordTogether.createTogetherCode(
             interaction.member.voice.channelId,
             "youtube"
@@ -86,8 +92,7 @@ module.exports = {
           });
         }
         break;
-      case "chess":
-        {
+      case "chess": {
           const connected = member.voice.channel;
 
           if (!connected)
@@ -105,8 +110,7 @@ module.exports = {
           });
         }
         break;
-      case "checkers":
-        {
+      case "checkers": {
           const connected = member.voice.channel;
 
           if (!connected)
@@ -124,8 +128,7 @@ module.exports = {
           });
         }
         break;
-      case "betrayal":
-        {
+      case "betrayal": {
           const connected = member.voice.channel;
 
           if (!connected)
@@ -143,8 +146,7 @@ module.exports = {
           });
         }
         break;
-      case "poker":
-        {
+      case "poker": {
           const connected = member.voice.channel;
 
           if (!connected)
@@ -162,8 +164,7 @@ module.exports = {
           });
         }
         break;
-      case "fish":
-        {
+      case "fish": {
           const connected = member.voice.channel;
 
           if (!connected)
@@ -181,8 +182,7 @@ module.exports = {
           });
         }
         break;
-      case "lettertile":
-        {
+      case "lettertile": {
           const connected = member.voice.channel;
 
           if (!connected)
@@ -200,8 +200,7 @@ module.exports = {
           });
         }
         break;
-      case "wordsnack":
-        {
+      case "wordsnack": {
           const connected = member.voice.channel;
 
           if (!connected)
@@ -219,8 +218,7 @@ module.exports = {
           });
         }
         break;
-      case "doodlecrew":
-        {
+      case "doodlecrew": {
           const connected = member.voice.channel;
 
           if (!connected)
@@ -238,8 +236,7 @@ module.exports = {
           });
         }
         break;
-      case "spellcast":
-        {
+      case "spellcast": {
           const connected = member.voice.channel;
 
           if (!connected)
@@ -257,8 +254,7 @@ module.exports = {
           });
         }
         break;
-      case "awkword":
-        {
+      case "awkword": {
           const connected = member.voice.channel;
 
           if (!connected)
@@ -276,6 +272,60 @@ module.exports = {
           });
         }
         break;
+      case "puttparty": {
+        const connected = member.voice.channel;
+
+        if (!connected)
+          return interaction.reply({
+            content:
+              "You aren't connected to a voice channel, join a voice channel to create a Awkword invite!",
+          });
+        client.DiscordTogether.createTogetherCode(
+          interaction.member.voice.channelId,
+          "puttparty"
+        ).then(async (invite) => {
+          interaction.reply({
+            content: `Click the link to join the activity: ${invite.code}`,
+          });
+        });
+      }
+      break;
+      case "sketchheads": {
+        const connected = member.voice.channel;
+
+        if (!connected)
+          return interaction.reply({
+            content:
+              "You aren't connected to a voice channel, join a voice channel to create a Awkword invite!",
+          });
+        client.DiscordTogether.createTogetherCode(
+          interaction.member.voice.channelId,
+          "sketchheads"
+        ).then(async (invite) => {
+          interaction.reply({
+            content: `Click the link to join the activity: ${invite.code}`,
+          });
+        });
+      }
+      break;
+      case "ocho": {
+        const connected = member.voice.channel;
+
+        if (!connected)
+          return interaction.reply({
+            content:
+              "You aren't connected to a voice channel, join a voice channel to create a Awkword invite!",
+          });
+        client.DiscordTogether.createTogetherCode(
+          interaction.member.voice.channelId,
+          "ocho"
+        ).then(async (invite) => {
+          interaction.reply({
+            content: `Click the link to join the activity: ${invite.code}`,
+          });
+        });
+      }
+      break;
     }
   },
 };

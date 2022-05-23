@@ -31,7 +31,6 @@ client.manager = new Manager({
 require("../systems/giveawaySystem.js")(client);
 
 module.exports = client;
-client.maintenance = false;
 
 ["events", "commands"].forEach(handler => {
     require(`./handlers/${handler}`)(client, PG, Ascii);
