@@ -4,6 +4,7 @@ module.exports = {
   name: "unban",
   description: "Unban a user.",
   permission: "BAN_MEMBERS",
+  public: true,
   options: [
     {
       name: "targetid",

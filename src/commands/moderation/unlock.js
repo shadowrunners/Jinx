@@ -5,6 +5,7 @@ module.exports = {
     name: "unlock",
     description: "Lifts the quarantine off a channel.",
     permission: 'MANAGE_CHANNELS',
+    public: true,
     /**
     * @param {CommandInteraction} interaction 
     */

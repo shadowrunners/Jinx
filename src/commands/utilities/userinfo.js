@@ -3,6 +3,7 @@ const { CommandInteraction, MessageEmbed } = require("discord.js");
 module.exports = {
   name: "userinfo",
   description: "Shows information about a user.",
+  public: true,
   options: [
     {
       name: "target",

@@ -4,6 +4,7 @@ const fetch = require("node-fetch");
 module.exports = {
   name: "phcomment",
   description: "Write a spicy PH comment on your behalf.",
+  public: true,
   options: [
     {
       name: "text",

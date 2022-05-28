@@ -4,6 +4,7 @@ module.exports = {
   name: "hackban",
   description: "Ban someone by only using their Discord ID.",
   permission: "BAN_MEMBERS",
+  public: true,
   options: [
       {
           name: "target",

@@ -3,6 +3,7 @@ const { Client, CommandInteraction } = require("discord.js");
 module.exports = {
   name: "activity",
   description: "Run activities with your homies.",
+  public: true,
   options: [
     {
       name: "activity",

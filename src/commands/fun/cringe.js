@@ -6,6 +6,7 @@ const superagent = require("superagent");
 module.exports = {
   name: "cringe",
   description: "Pretty cringe bro.",
+  public: true,
   /**
    * @param {CommandInteraction} interaction
    */

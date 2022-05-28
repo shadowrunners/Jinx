@@ -4,6 +4,7 @@ const fetch = require("node-fetch");
 module.exports = {
   name: "tweet",
   description: "Tweet something about someone.",
+  public: true,
   options: [
     {
       name: "text",

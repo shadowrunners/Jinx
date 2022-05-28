@@ -4,6 +4,7 @@ module.exports = {
     name: "User Avatar",
     type: "USER",
     context: true,
+    public: true,
     /**
     * @param {ContextMenuInteraction} interaction 
     */

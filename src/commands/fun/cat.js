@@ -5,6 +5,7 @@ const fetch = require("node-fetch")
 module.exports = {
     name: "cat",
     description: "See a random cat picture!",
+    public: true,
     /**
      * @param {CommandInteraction} interaction
      */

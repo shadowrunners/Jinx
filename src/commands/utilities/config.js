@@ -1,10 +1,10 @@
 const { MessageEmbed, CommandInteraction, MessageActionRow, MessageButton } = require("discord.js");
 const TDB = require("../../structures/schemas/ticketSetup.js");
-const MDB = require("../../structures/schemas/muteDB.js");
 
 module.exports = {
-    name: "config",
+    name: "configv2",
     description: "Configure parts of the bot.",
+    public: true,
     options: [
         {
             name: "ticketspanel",
@@ -69,13 +69,7 @@ module.exports = {
                     type: "STRING",
                 },  
             ],
-        },
-        {
-            name: "setmuterole",
-            description: "Set the Muted role.",
-            type: "ROLE",
-            required: true,
-        }
+        }, 
     ],
     /**
      * @param {CommandInteraction} interaction
@@ -151,7 +145,7 @@ module.exports = {
                     interaction.reply({ content: "Done", ephemeral: true });
                 }
                 case "setmuterole": {
-                    const role = options.getRole("setmuterole");
+                    const role = options.getRole("role");
                     const data = await MDB.findOne({Guild: interaction.guild.id})
 
                     const muteSet = new MessageEmbed()
@@ -159,8 +153,8 @@ module.exports = {
                         .setDescription(`🔹 | The mute role has been set to ${role.toString()}.`)
 
                     const muteReset = new MessageEmbed()
-                    .setColor("BLURPLE")
-                    .setDescription(`🔹 | The mute role has been changed to ${role.toString()}.`)
+                        .setColor("BLURPLE")
+                        .setDescription(`🔹 | The mute role has been changed to ${role.toString()}.`)
                     
                     if(!data) {
                         await MDB.create({
@@ -175,12 +169,13 @@ module.exports = {
                 }
             }
         } catch (e) {
-            let errEmbed = new MessageEmbed()
-                .setColor("BLURPLE")
-                .setTitle("Uh oh...")
-                .setDescription(`🔹 | An error has occured. ${e} \nReport this issue to scrappie in the [Black Hawk Support Server.](https://discord.gg/HwkDSs7X82)`)
-                .setFooter({ text: "Don't worry as long as you're not scrappie." })
-            return interaction.reply({ embeds: [errEmbed] })
+            console.log(e)
+            //let errEmbed = new MessageEmbed()
+                //.setColor("BLURPLE")
+                //.setTitle("Uh oh...")
+                //.setDescription(`🔹 | An error has occured. ${e} \nReport this issue to scrappie in the [Black Hawk Support Server.](https://discord.gg/HwkDSs7X82)`)
+                //.setFooter({ text: "Don't worry as long as you're not scrappie." })
+            //return interaction.reply({ embeds: [errEmbed] })
         }
     }
 }

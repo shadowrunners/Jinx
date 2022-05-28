@@ -5,6 +5,7 @@ module.exports = {
     name: 'giveaway',
     description: 'A complete giveaway system.',
     permission: 'ADMINISTRATOR',
+    public: true,
     options: [
         {
             name: 'start',

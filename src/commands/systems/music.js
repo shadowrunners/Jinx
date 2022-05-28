@@ -1,10 +1,13 @@
 const { CommandInteraction, MessageEmbed, Client } = require("discord.js");
 const actualTime = require("humanize-duration");
 const util = require("../../utils/util.js");
+const genius = require("genius-lyrics");
+const gClient = new genius.Client();
 
 module.exports = {
     name: "music",
     description: "A complete music system",
+    public: true,
     options: [
         {
             name: "play",
@@ -19,20 +22,6 @@ module.exports = {
             options: [{ name: "percent", description: "10 = 10%", type: "NUMBER", required: true }]
         },
         {
-            name: "seek",
-            description: "Seeks the song to the specified position.",
-            value: "seek",
-            type: "SUB_COMMAND",
-            options: [
-                {
-                    name: "time",
-                    description: "Provide a position (in seconds) to seek.",
-                    type: "NUMBER",
-                    required: true
-                },
-            ],
-        },
-        {
             name: "settings",
             description: "Select an option.",
             type: "SUB_COMMAND",
@@ -44,8 +33,8 @@ module.exports = {
                     { name: "🔹| Pause", value: "pause" },
                     { name: "🔹| Resume", value: "resume" },
                     { name: "🔹| Stop", value: "stop" },
+                    { name: "🔹| Lyrics", value: "lyrics"},
                     { name: "🔹| Shuffle", value: "shuffle" },
-                    { name: "🔹| Lyrics", value: "lyrics" },
                     { name: "🔹| Now Playing", value: "nowplaying" },
                 ]
             }],
@@ -126,12 +115,6 @@ module.exports = {
                         .setDescription(`🔹 | Volume has been set to **${player.volume}%**.`)
                     return interaction.reply({ embeds: [volumeEmbed] })
                 }
-                case "seek": {
-                    const seekEmbed = new MessageEmbed()
-                        .setColor("BLURPLE")
-                        .setDescription(`🔹 | This feature was not ported yet, it will be come in a future Developer Preview build.`)
-                    return interaction.reply({ embeds: [seekEmbed] })
-                }
                 case "settings": {
                     switch (options.getString("options")) {
                         case "skip": {
@@ -149,33 +132,8 @@ module.exports = {
 
                             const npEmbed = new MessageEmbed()
                                 .setColor("BLURPLE")
-                                .setDescription(`**<:nowplayingnote:952554583513780285> | Now Playing: [${track.title}](${track.uri})**`)
-                                .addFields(
-                                    {
-                                        name: "Duration",
-                                        value: [
-                                            `\`${actualTime(player.position)} / ${actualTime(
-                                                player.queue.current.duration,
-                                            )}\``
-                                        ].join("\n"),
-                                        inline: true,
-                                    },
-                                    {
-                                        name: "Volume",
-                                        value: [
-                                            `\`${player.volume}\``
-                                        ].join("\n"),
-                                        inline: true,
-                                    },
-                                    {
-                                        name: "Requester",
-                                        value: [
-                                            `\`${player.queue.current.requester}\``
-                                        ].join("\n"),
-                                        colonNotation: true,
-                                        inline: true,
-                                    }
-                                );
+                                .setTitle("Now Playing")
+                                .setDescription(`[${track.title}](${track.uri}) [${player.queue.current.requester}]`)
                             return interaction.reply({ embeds: [npEmbed] })
                         }
                         case "pause": {
@@ -203,6 +161,25 @@ module.exports = {
                                 .setColor("BLURPLE")
                                 .setDescription("🔹 | Disconnected.")
                             return interaction.reply({ embeds: [disconnectEmbed] })
+                        }
+                        case "lyrics": {
+                            const track = player.queue.current;
+                            const trackTitle = track.title.replace("(Official Video)", "").replace("(Official Audio)", "");              
+                            const actualTrack = await gClient.songs.search(trackTitle);
+                            const searches = actualTrack[0];
+                            const lyrics = await searches.lyrics();
+
+                            const noLyrics = new MessageEmbed()
+                                .setColor("BLURPLE")
+                                .setDescription("🔹 | No lyrics found.")
+
+                            if(!searches) return interaction.reply({ embeds: [noLyrics] });
+
+                            const lyricsEmbed = new MessageEmbed()
+                                .setColor("BLURPLE")
+                                .setTitle(`🔹 | Lyrics for **${trackTitle}**`)
+                                .setDescription(lyrics)
+                            return interaction.reply({ embeds: [lyricsEmbed] })     
                         }
                         case "shuffle": {
                             if (!player.playing) return interaction.reply({ content: "There is nothing in the queue." });
@@ -236,7 +213,7 @@ module.exports = {
             let errEmbed = new MessageEmbed()
                 .setColor("BLURPLE")
                 .setTitle("Uh oh...")
-                .setDescription(`🔹 | An error has occured. ${e} \nReport this issue to scrappie in the [Black Hawk Support Server.](https://discord.gg/HwkDSs7X82)`)
+                .setDescription(`🔹 | An error has occured. ${e} \nReport this issue to scrappie in the [CryoLabs Discord server.](https://discord.gg/HwkDSs7X82)`)
                 .setFooter({ text: "Don't worry as long as you're not scrappie." })
             return interaction.reply({ embeds: [errEmbed] })
         }

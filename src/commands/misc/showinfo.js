@@ -5,6 +5,7 @@ const { imdbAPIKey } = require("../../structures/config.json");
 module.exports = {
     name: "showinfo",
     description: "See information about a show.",
+    public: true,
     options: [
         {
             name: "title",

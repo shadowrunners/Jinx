@@ -6,6 +6,7 @@ const superagent = require("superagent");
 module.exports = {
     name: "smile",
     description: ":) but in glorious GIF form.",
+    public: true,
     /**
      * @param {CommandInteraction} interaction
      */

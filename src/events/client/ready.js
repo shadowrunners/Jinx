@@ -10,17 +10,8 @@ module.exports = {
      */
     execute(client) {
         console.log("[Client] >> Ready to rock, bitch.")
-        setInterval(() => {
-            if (client.maintenance) {
-                client.user.setStatus("dnd")
-                client.user.setActivity("MaintenanceMaster 1.2", { type: "PLAYING" })
-                return;
-            }
-            if (!client.maintenance) {
-                client.user.setStatus("online")
-                client.user.setActivity("Get Jinxed", { type: "LISTENING" })
-            }
-        }, 30000);
+        client.user.setStatus("online")
+        client.user.setActivity("Get Jinxed", { type: "LISTENING" })
 
         require("../../systems/lockdownSystem.js")(client);
         

@@ -5,6 +5,7 @@ module.exports = {
   name: "ticket",
   description: "Options for tickets.",
   permission: "ADMINISTRATOR",
+  public: true,
   options: [
     {
       name: "action",

@@ -23,6 +23,13 @@ module.exports = {
                 }
             }
 
+            if(interaction.isSelectMenu()) {
+                if(interaction.customId !== 'test1') return;
+
+                await interaction.deferReply({ ephemeral: true })
+                interaction.followUp({content: "Your shit is working!"})
+            }
+
             command.execute(interaction, client);
         }
     }

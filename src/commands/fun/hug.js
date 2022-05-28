@@ -6,6 +6,7 @@ const superagent = require("superagent");
 module.exports = {
   name: "hug",
   description: "Hug someone.",
+  public: true,
   options: [
     {
       name: "target",
@@ -19,11 +20,11 @@ module.exports = {
    */
   async execute(interaction) {
     const target = interaction.options.getMember("target");
-      await target.user.fetch();
+    await target.user.fetch();
     const { body } = await superagent.get("https://api.waifu.pics/sfw/hug");
 
-  if (target.id === interaction.user.id)
-    return interaction.reply({ content: "Do you need a real hug, friend?" });
+    if (target.id === interaction.user.id)
+      return interaction.reply({ content: "Do you need a real hug, friend?" });
 
     const hugEmbed = new MessageEmbed()
       .setColor("BLURPLE")

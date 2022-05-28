@@ -6,6 +6,7 @@ module.exports = {
   name: "quarantine",
   description: "Quarantine a channel.",
   permission: "MANAGE_CHANNELS",
+  public: true,
   options: [
     {
       name: "time",

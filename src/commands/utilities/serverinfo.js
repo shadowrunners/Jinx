@@ -3,6 +3,7 @@ const { CommandInteraction, MessageEmbed } = require('discord.js');
 module.exports = {
     name: 'serverinfo',
     description: 'Shows information about the current server.',
+    public: true,
     /**
     * @param {CommandInteraction} interaction 
     */

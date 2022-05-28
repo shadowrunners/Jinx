@@ -3,6 +3,7 @@ const { CommandInteraction, MessageEmbed } = require("discord.js");
 module.exports = {
   name: "avatar",
   description: "Get a person's avatar.",
+  public: true,
   options: [
     {
       name: "target",

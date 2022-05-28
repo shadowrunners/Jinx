@@ -6,6 +6,7 @@ const superagent = require("superagent");
 module.exports = {
     name: "wave",
     description: "Wave at someone.",
+    public: true,
     options: [
         {
             name: "target",
