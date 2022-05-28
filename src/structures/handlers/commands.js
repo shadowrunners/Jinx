@@ -1,34 +1,44 @@
-const { Perms } = require("../handlers/validation/permissions");
-const { Client } = require("discord.js");
+const glob = require('glob');
+const { Client } = require("discord.js")
+const { devGuildID } = require(`${process.cwd()}/src/structures/config.json`)
 
-/**
- * @param {Client} client
- */
-module.exports = async (client, PG, Ascii) => {
-  const Table = new Ascii("Command Loaded");
+module.exports = (client) => {
+    /**
+    * @param {Client} client
+    */
+    const public_CommandsArray = [];
+    const dev_CommandsArray = [];
 
-  CommandsArray = [];
+    glob(`${process.cwd()}/src/commands/**/*.js`, function(err, files) {
+        files.map(async (file) => {
+            const command = require(file);
 
-  (await PG(`${process.cwd()}/src/commands/*/*.js`)).map(async (file) => {
-    const command = require(file);
+            if(!command.name) {
+                delete require.cache[require.resolve(file)];
+                return console.log(`${file.split("/").pop()} does not have a command name! Removing the command.`)
+            }
 
-    if (!command.name)
-      return Table.addRow(command.name, "🔸 Failed", "Missing name.");
+            if(command.public) {
+                public_CommandsArray.push(command);
+                console.log(`Loaded ${command.name.toUpperCase()} from ${file.split("/").pop()}`)
+            } else {
+                dev_CommandsArray.push(command);
+                console.log(`Loaded ${command.name.toUpperCase()} from ${file.split("/").pop()}`)
+            }
+            
+            client.commands.set(command.name, command);
+            delete require.cache[require.resolve(file)];
+        });
 
-    if (!command.context && !command.description)
-      return Table.addRow(command.name, "🔸 Failed", "Missing a description.");
-
-    if (command.permission) {
-      if (Perms.includes(command.permission)) command.defaultPermission = false;
-      else
-        return Table.addRow(command.name, "♦ Failed", "Permission is invalid.");
-    }
-
-    client.commands.set(command.name, command);
-    CommandsArray.push(command);
-
-    await Table.addRow(command.name, "🔷 Successfully loaded.");
-  });
-
-  console.log(Table.toString());
-};
+        client.on("ready", async () => {
+            client.publicCommands = public_CommandsArray;
+            const guild = client.guilds.cache.get(devGuildID);
+            if(guild) {
+                await guild.commands.set(dev_CommandsArray);
+                console.log(`Loaded ${dev_CommandsArray.length} developer commands`);
+            }
+            await client.application.commands.set(public_CommandsArray);
+            console.log(`Loading ${public_CommandsArray.length} global commands`);
+        });
+    });
+}
