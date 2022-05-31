@@ -2,20 +2,20 @@
 
 # Jinx
 [![](https://img.shields.io/badge/discord.js-v13.6.0-blue.svg?logo=npm)](https://github.com/discordjs)
-> A multi-purpose Discord bot built with a ton of tears and love. <3
+> A multi-purpose bot built with you as its first priority. <3
 
 # 🔹 About
 Jinx is an open-source Discord Bot coded in JavaScript using [Discord.js](https://discord.js.org).
 
 # 🔹 Features
 * 🎉 **Giveaway**: `giveaway start`, `giveaway actions (end, pause, unpause, reroll, delete)`.
-* 🎧 **Music**: `music play`, `music volume`, `music settings (view queue, skip, pause, resume, stop, shuffle, autoplay, relatedsong, repeat)`.
-* ⚒️ **Moderation**: `ban`, `kick`, `hackban`, `unban`.
-* 🎟️ **Tickets**: `ticketsetup`, `ticket`.
+* 🎧 **Music**: `music play`, `music volume`, `music settings (view queue, skip, pause, resume, stop, shuffle, lyrics)`.
+* ⚒️ **Moderation**: `punish`, `hackban`, `unban`.
+* 🎟️ **Tickets**: `ticket`.
 * 🛠️ **Utilities**: `avatar`, `userinfo`, `maintenancemode`, `serverinfo`, `quarantine`, `unlock`.
-* 📦 **Miscellaneous**:  `about`, `aniinfo`, `movieinfo`, `status`, `showinfo`.
+* 📦 **Miscellaneous**:  `aniinfo`, `movieinfo`, `status`, `showinfo`.
 * 😀 **Emotions**: `bite`, `blush`, `bonk`, `bully`, `cringe`, `cry`, `cuddle`, `handhold`, `highfive`, `hug`, `kill`, `kiss`, `pat`, `poke`, `slap`, `smile`, `wave`, `yeet`.
-* 📷 **Fun**: `image (triggered, shit, wasted, rainbow, rip, sepia, slap)`, `activity`.
+* 📷 **Fun**: `activity`.
 
 # 🔹 Installation
 You can find the installation guide [here](https://github.com/notscrappie/jinx/blob/master/docs/install.md) or alternatively, you can invite our hosted version of Jinx [here](https://invite.jinxbot.ml).
