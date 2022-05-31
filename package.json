@@ -1,6 +1,6 @@
 {
   "name": "jinx",
-  "version": "1.0.0",
+  "version": "4.2.0",
   "description": "A multi-purpose Discord bot built with a ton of tears and love. <3",
   "main": "./src/structures/index.js",
   "scripts": {
@@ -13,24 +13,26 @@
     "@mapbox/node-pre-gyp": "^1.0.9",
     "ascii-table": "^0.0.9",
     "asynckit": "^0.4.0",
-    "better-erela.js-spotify": "^1.3.6",
+    "better-erela.js-spotify": "^1.3.7",
     "byte-size": "^8.1.0",
     "callsites": "^4.0.0",
     "combined-stream": "^1.0.8",
     "common-tags": "^1.8.2",
     "delayed-stream": "^1.0.0",
-    "discord-api-types": "^0.32.0",
+    "discord-api-types": "^0.33.1",
     "discord-giveaways": "github:Androz2091/discord-giveaways#develop",
-    "discord-html-transcripts": "^2.3.2",
+    "discord-html-transcripts": "^2.4.5",
     "discord-together": "^1.3.25",
-    "discord.js": "^13.6.0",
+    "discord.js": "^13.7.0",
     "discordjs-button-pagination": "^3.0.1",
     "dot-prop": "^7.2.0",
     "erela.js": "^2.3.3",
     "erela.js-deezer": "^1.0.7",
     "ffmpeg-static": "^5.0.0",
     "form-data": "^4.0.0",
+    "genius-lyrics": "^4.3.8",
     "glob": "^7.2.0",
+    "humanize-duration": "^3.27.2",
     "imdb-api": "^4.4.1",
     "is-obj": "^3.0.0",
     "libsodium-wrappers": "^0.7.10",
@@ -39,34 +41,34 @@
     "mime-db": "^1.52.0",
     "mime-types": "^2.1.35",
     "moment": "^2.29.3",
-    "mongoose": "^6.3.1",
+    "mongoose": "^6.3.5",
     "ms": "^2.1.3",
     "node-fetch": "^2.6.7",
     "ow": "^0.28.1",
     "pretty-ms": "^7.0.1",
     "simple-get": "^4.0.1",
-    "superagent": "^7.1.1",
+    "superagent": "^7.1.4",
     "tr46": "^3.0.0",
     "ts-mixer": "^6.0.1",
     "tslib": "^2.4.0",
-    "type-fest": "^2.12.2",
+    "type-fest": "^2.13.0",
     "vali-date": "^1.0.0",
     "webidl-conversions": "^7.0.0",
     "whatwg-url": "^11.0.0",
-    "ws": "^8.5.0",
+    "ws": "^8.7.0",
     "yt-search": "^2.10.3"
   },
   "devDependencies": {
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.16"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/notscrappie/jinx.git"
+    "url": "git+https://github.com/cryolabs/jinx.git"
   },
   "author": "scrappie",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/notscrappie/jinx/issues"
+    "url": "https://github.com/cryolabs/jinx/issues"
   },
-  "homepage": "https://github.com/notscrappie/jinx#readme"
+  "homepage": "https://github.com/cryolabs/jinx#readme"
 }

@@ -31,5 +31,6 @@ module.exports = (client) => {
             reaction: '🎉'
         }
     });
+    
     client.giveawaysManager = manager;
 }

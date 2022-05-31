@@ -9,14 +9,13 @@ module.exports = {
      */
 
     async execute(guild, client) {
-        console.log(`Joined ${guild.name} | ${guild.id}`);
         await guild.commands.set(client.publicCommands);
 
         try { 
             guild.members.cache.get(guild.ownerId)?.send({ embeds: [new MessageEmbed()
-                .setColor("GREEN")
-                .setTitle("Hey 👋, thanks for inviting me to your server!")
-                .setDescription("If you need help setting me up use `/help`!")
+                .setColor("BLURPLE")
+                .setTitle("Hiya! Thanks for inviting Jinx to your server!")
+                .setDescription("We hope you have a fun time!\n\nIf you have any questions, feel free to join our support server [here](https://discord.gg/HwkDSs7X82).")
             ]})
         } catch(err) {};
     },

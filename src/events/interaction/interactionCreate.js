@@ -1,4 +1,5 @@
 const { Client, MessageEmbed, CommandInteraction } = require("discord.js");
+const BDB = require("../../structures/schemas/blacklistDB.js"); // Blacklisted Users DB
 
 module.exports = {
     name: "interactionCreate",
@@ -23,14 +24,21 @@ module.exports = {
                 }
             }
 
-            if(interaction.isSelectMenu()) {
-                if(interaction.customId !== 'test1') return;
-
-                await interaction.deferReply({ ephemeral: true })
-                interaction.followUp({content: "Your shit is working!"})
+            const blacklist = await BDB.findOne({ UserID: interaction.user.id });
+            if (blacklist) {
+                await interaction.reply({
+                    embeds: [
+                        new MessageEmbed()
+                            .setColor("BLURPLE")
+                            .setTitle(`${client.user.username} | Notice`)
+                            .setDescription(`You have been permanently blacklisted from using ${client.user.username}.\n For further information, contact the bot owner.`)
+                            .setFooter({ text: "If you believe this is a mistake, contact the bot owner." })
+                            .setTimestamp()
+                    ]
+                });
+            } else {
+                command.execute(interaction, client)
             }
-
-            command.execute(interaction, client);
         }
     }
 }

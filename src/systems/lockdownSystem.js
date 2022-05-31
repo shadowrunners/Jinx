@@ -1,5 +1,6 @@
 const { Client } = require("discord.js")
 const DB = require("../structures/schemas/lockdownDB.js");
+
 /**
  * @param {Client} client
  */
