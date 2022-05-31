@@ -12,7 +12,7 @@ Jinx is an open-source Discord Bot coded in JavaScript using [Discord.js](https:
 * 🎧 **Music**: `music play`, `music volume`, `music settings (view queue, skip, pause, resume, stop, shuffle, lyrics)`.
 * ⚒️ **Moderation**: `punish`, `hackban`, `unban`.
 * 🎟️ **Tickets**: `ticket`.
-* 🛠️ **Utilities**: `avatar`, `userinfo`, `maintenancemode`, `serverinfo`, `quarantine`, `unlock`.
+* 🛠️ **Utilities**: `avatar`, `config`, `userinfo`, `serverinfo`, `quarantine`, `unlock`.
 * 📦 **Miscellaneous**:  `aniinfo`, `movieinfo`, `status`, `showinfo`.
 * 😀 **Emotions**: `bite`, `blush`, `bonk`, `bully`, `cringe`, `cry`, `cuddle`, `handhold`, `highfive`, `hug`, `kill`, `kiss`, `pat`, `poke`, `slap`, `smile`, `wave`, `yeet`.
 * 📷 **Fun**: `activity`.
