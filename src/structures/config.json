@@ -1,7 +1,9 @@
 {
-    "Token": "",
+    "token": "",
     "Database": "",
+
     "ownerID": "",
+    "devGuildID": "",
 
     "SpotifyClientID": "",
     "SpotifySecret": "",
@@ -12,9 +14,9 @@
     "nodes": [
         {
             "id": "main",
-            "host": "173.249.9.178",
-            "port": 5074,
-            "password": "EpikHostOnTop",
+            "host": "uk1.buckytm.com",
+            "port": 28112,
+            "password": "f82263yh75f6r5",
             "retryAmount": 15, 
             "retryDelay": 6000, 
             "secure": false
