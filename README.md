@@ -1,4 +1,4 @@
-<img width="120" height="120" align="left" style="float: left; margin: 0 10px 0 0;" alt="Jinx" src="https://cdn.discordapp.com/avatars/917009806353653780/5a591440390d36688fe9620d63dca727.png?size=1024"> 
+<img width="120" height="120" align="left" style="float: left; margin: 0 10px 0 0;" alt="Jinx" src="https://cdn.discordapp.com/avatars/917009806353653780/21fbc769c7449c5dbae789529bd89c70.webp?size=2048"> 
 
 # Jinx
 [![](https://img.shields.io/badge/discord.js-v13.6.0-blue.svg?logo=npm)](https://github.com/discordjs)
