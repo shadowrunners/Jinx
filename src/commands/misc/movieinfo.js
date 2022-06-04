@@ -22,6 +22,7 @@ module.exports = {
         const title = interaction.options.getString("title");
 
         imdbClient.get({name: `${title}`}, {timeout: 30000}).then(async (result) => {
+            const date = result.released;
             const movieinfoEmbed = new MessageEmbed()
             .setAuthor({name: `${result.title}`})
                 .setColor("BLURPLE")
@@ -32,7 +33,7 @@ module.exports = {
                         name: "Released",
                         inline: true,
                         value: [
-                            `${result.released}` || "Unknown."
+                            `${date.toLocaleDateString("en-GB")}` || "Unknown."
                         ].join("\n")
                     },
                     {

@@ -18,12 +18,13 @@ module.exports = {
      * @param {CommandInteraction} interaction
      */
     async execute(interaction) {
-        const imdbClient = new imdb.Client({apiKey: imdbAPIKey});
+        const imdbClient = new imdb.Client({ apiKey: imdbAPIKey });
         const title = interaction.options.getString("title");
 
-        imdbClient.get({name: `${title}`, type: imdb.TVShow}, {timeout: 30000}).then(async (result) => {
+        imdbClient.get({ name: `${title}`, type: imdb.TVShow }, { timeout: 30000 }).then(async (result) => {
+            const date = result.released;
             const showinfoEmbed = new MessageEmbed()
-            .setAuthor({name: `${result.title}`})
+                .setAuthor({ name: `${result.title}` })
                 .setColor("BLURPLE")
                 .setThumbnail(result.poster)
                 .setDescription(result.plot)
@@ -32,7 +33,7 @@ module.exports = {
                         name: "Released",
                         inline: true,
                         value: [
-                            `${result.released}` || "Unknown."
+                            `${date.toLocaleDateString("en-GB")}` || "Unknown."
                         ].join("\n")
                     },
                     {
@@ -71,14 +72,14 @@ module.exports = {
                         ].join("\n")
                     },
                 )
-            interaction.reply({embeds: [showinfoEmbed]});
-            
+            interaction.reply({ embeds: [showinfoEmbed] });
+
         }).catch((e) => {
-                const errEmbed = new MessageEmbed()
-                    .setColor("BLURPLE")
-                    .setDescription(`🔹 | No movie/show found.`)
-                return interaction.reply({embeds: [errEmbed]})
-            },
+            const errEmbed = new MessageEmbed()
+                .setColor("BLURPLE")
+                .setDescription(`🔹 | No movie/show found.`)
+            return interaction.reply({ embeds: [errEmbed] })
+        },
         )
     }
 };

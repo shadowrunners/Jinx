@@ -2,7 +2,7 @@ const { CommandInteraction, MessageEmbed } = require("discord.js");
 const mal = require("mal-scraper");
 
 module.exports = {
-    name: "aniinfo",
+    name: "anime",
     description: "See information about an anime.",
     public: true,
     options: [
