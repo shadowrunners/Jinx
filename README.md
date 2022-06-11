@@ -23,6 +23,6 @@ You can find the installation guide [here](https://github.com/notscrappie/jinx/b
 # 🔹 Credits
 * [Lyxcode](https://youtube.com/c/Lyxcode) for his tutorials (command handler & giveaway system).
 * [Spiderjockey02](https://github.com/Spiderjockey02/Discord-Bot) & [DeltaCoderr](https://github.com/DeltaCoderr/KarmaBot)'s READMEs from which I took inspiration.
-* Original profile picture artwork taken from [AlphaCoders](https://wall.alphacoders.com/big.php?i=1044272).
+* Original profile picture artwork taken from [AlphaCoders](https://wall.alphacoders.com/big.php?i=570157).
 * Huge credits to [Alvaa](https://github.com/Allvaa/lavalink-musicbot) and [SudhanPlayz](https://github.com/SudhanPlayz/Discord-MusicBot/), since their repos have helped me understand Erela.js better than the actual docs.
 
