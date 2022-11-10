@@ -4,6 +4,9 @@
 [![](https://img.shields.io/badge/discord.js-v13.6.0-blue.svg?logo=npm)](https://github.com/discordjs)
 > A multi-purpose bot built with you as its first priority. <3
 
+# 🔹 NOTICE
+This project has been discontinued a few months ago. This repository was unarchived in order for me to fix ongoing security issues. It may be used for something else in the future.
+
 # 🔹 About
 Jinx is an open-source Discord Bot coded in JavaScript using [Discord.js](https://discord.js.org).
 
