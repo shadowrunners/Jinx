@@ -46,7 +46,7 @@
     "tr46": "^3.0.0",
     "ts-mixer": "^6.0.1",
     "tslib": "^2.4.0",
-    "type-fest": "^2.15.0",
+    "type-fest": "^3.0.0",
     "vali-date": "^1.0.0",
     "webidl-conversions": "^7.0.0",
     "whatwg-url": "^11.0.0",
