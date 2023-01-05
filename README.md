@@ -5,7 +5,7 @@
 > A multi-purpose bot built with you as its first priority. <3
 
 # 🔹 NOTICE
-This project has been discontinued a few months ago. This repository was unarchived in order for me to fix ongoing security issues. It may be used for something else in the future.
+This project has been discontinued a few months ago. This repository was archived due to it being no longer supported and is here for archival purposes only.
 
 # 🔹 About
 Jinx is an open-source Discord Bot coded in JavaScript using [Discord.js](https://discord.js.org).
@@ -19,9 +19,6 @@ Jinx is an open-source Discord Bot coded in JavaScript using [Discord.js](https:
 * 📦 **Miscellaneous**:  `aniinfo`, `movieinfo`, `status`, `showinfo`.
 * 😀 **Emotions**: `bite`, `blush`, `bonk`, `bully`, `cringe`, `cry`, `cuddle`, `handhold`, `highfive`, `hug`, `kill`, `kiss`, `pat`, `poke`, `slap`, `smile`, `wave`, `yeet`.
 * 📷 **Fun**: `activity`.
-
-# 🔹 Installation
-You can find the installation guide [here](https://github.com/notscrappie/jinx/blob/master/docs/install.md) or alternatively, you can invite our hosted version of Jinx [here](https://invite.jinxbot.ml).
 
 # 🔹 Credits
 * [Lyxcode](https://youtube.com/c/Lyxcode) for his tutorials (command handler & giveaway system).
